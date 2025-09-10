@@ -15,6 +15,7 @@
   justify-content: space-between;
   align-items: center;
   gap:5px;
+  padding-bottom: 4px;
 }
 
 .row2 {
@@ -25,6 +26,7 @@
   justify-content: space-around;
   align-items: center;
   gap:5px;
+  padding-bottom: 4px;
 }
 
 .row3 {
@@ -36,6 +38,7 @@
   align-items: center;
   gap:5px;
   padding-bottom: 2px;
+  padding-bottom: 4px;
 }
 
 .keys {
