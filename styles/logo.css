@@ -4,12 +4,9 @@
   justify-content: flex-end;
   align-items: center;
   width:100%;
-  height: 5dvh;
+  height: 20dvh;
   border: 1px black solid;
   }
-.info {
-  height: 15dvh;
-}
 
 .game-number {
   padding-top:10px;
