@@ -1,0 +1,44 @@
+.game-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+  color:  white;
+  border-radius: 5px;
+  width: 100%;
+  aspect-ratio: 10/1;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.play {
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row; 
+  gap:10px;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 450px;
+  width:75%;
+  flex-grow: 1;
+  }
+
+.letters {
+  flex: 1 1 calc(25% - 10px);
+  border: 1px black solid;
+  aspect-ratio: 1/1;
+  background-color: blue;
+  border-radius: 12px;
+}
+
+.newgame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: brown;
+  border-radius: 5px;
+  width: 100%;
+  aspect-ratio: 10/1;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
