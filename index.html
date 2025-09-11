@@ -14,15 +14,17 @@
 <body>
   <div class="main">
 
-    <div class="logo">LINGO</div>
+    <div class="logo">
+      <img src="images/logo.webp" alt="LINGO" class="lingo-logo">
+    </div>
 
     <div class="game-result">Well played, you have found my word!</div>
 
     <div class="play">
-        <div class="letters" id="js-11">1</div>
-        <div class="letters" id="js-12">2</div>
-        <div class="letters" id="js-13">3</div>
-        <div class="letters" id="js-14">4</div>
+        <div class="letters" id="js-11"></div>
+        <div class="letters" id="js-12"></div>
+        <div class="letters" id="js-13"></div>
+        <div class="letters" id="js-14"></div>
         
         <div class="letters" id="js-21"></div>
         <div class="letters" id="js-22"></div>
@@ -50,40 +52,40 @@
     <div class="keyboard">
 
       <div class="row1">
-        <div class="keys">Q</div>
-        <div class="keys">W</div>
-        <div class="keys">E</div>
-        <div class="keys">R</div>
-        <div class="keys">T</div>
-        <div class="keys">Y</div>
-        <div class="keys">U</div>
-        <div class="keys">I</div>
-        <div class="keys">O</div>
-        <div class="keys">P</div>
+        <div class="keys" onclick="enterLetter('Q')">Q</div>
+        <div class="keys" onclick="enterLetter('W')">W</div>
+        <div class="keys" onclick="enterLetter('E')">E</div>
+        <div class="keys" onclick="enterLetter('R')">R</div>
+        <div class="keys" onclick="enterLetter('T')">T</div>
+        <div class="keys" onclick="enterLetter('Y')">Y</div>
+        <div class="keys" onclick="enterLetter('U')">U</div>
+        <div class="keys" onclick="enterLetter('I')">I</div>
+        <div class="keys" onclick="enterLetter('O')">O</div>
+        <div class="keys" onclick="enterLetter('P')">P</div>
       </div>
         
       <div class="row2">
-        <div class="keys">A</div>
-        <div class="keys">S</div>
-        <div class="keys">D</div>
-        <div class="keys">F</div>
-        <div class="keys">G</div>
-        <div class="keys">H</div>
-        <div class="keys">J</div>
-        <div class="keys">K</div>
-        <div class="keys">L</div>
+        <div class="keys" onclick="enterLetter('A')">A</div>
+        <div class="keys" onclick="enterLetter('S')">S</div>
+        <div class="keys" onclick="enterLetter('D')">D</div>
+        <div class="keys" onclick="enterLetter('F')">F</div>
+        <div class="keys" onclick="enterLetter('G')">G</div>
+        <div class="keys" onclick="enterLetter('H')">H</div>
+        <div class="keys" onclick="enterLetter('J')">J</div>
+        <div class="keys" onclick="enterLetter('K')">K</div>
+        <div class="keys" onclick="enterLetter('L')">L</div>
       </div>
 
       <div class="row3">
-        <div class="keys2">ENT</div>
-        <div class="keys">Z</div>
-        <div class="keys">X</div>
-        <div class="keys">C</div>
-        <div class="keys">V</div>
-        <div class="keys">B</div>
-        <div class="keys">N</div>
-        <div class="keys">M</div>
-        <div class="keys2">DEL</div>
+        <div class="keys2" onclick="enterLetter('ENT')">ENT</div>
+        <div class="keys" onclick="enterLetter('Z')">Z</div>
+        <div class="keys" onclick="enterLetter('X')">X</div>
+        <div class="keys" onclick="enterLetter('C')">C</div>
+        <div class="keys" onclick="enterLetter('V')">V</div>
+        <div class="keys" onclick="enterLetter('B')">B</div>
+        <div class="keys" onclick="enterLetter('N')">N</div>
+        <div class="keys" onclick="enterLetter('M')">M</div>
+        <div class="keys2" onclick="enterLetter('DEL')">DEL</div>
       </div>
     </div>
   </div>
