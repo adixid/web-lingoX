@@ -1,14 +1,19 @@
-.game-result {
+.game-result, .newgame {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: green;
   color:  white;
-  border-radius: 5px;
+  border-radius: 15px;
   width: 100%;
   aspect-ratio: 10/1;
   margin-top: 4px;
   margin-bottom: 4px;
+}
+
+.newgame {
+  background-color: orange;
+  color: black;
 }
 
 .play {
@@ -19,7 +24,7 @@
   justify-content: space-between;
   align-items: center;
   max-width: 450px;
-  width:65%;
+  width:55%;
   flex-grow: 1;
   }
 
@@ -27,18 +32,19 @@
   flex: 1 1 calc(25% - 10px);
   border: 1px black solid;
   aspect-ratio: 1/1;
-  background-color: blue;
+  background-color: rgb(241, 179, 85);
   border-radius: 12px;
-}
-
-.newgame {
-  display: flex;
+  display:flex;
   justify-content: center;
   align-items: center;
-  background-color: brown;
-  border-radius: 5px;
-  width: 100%;
-  aspect-ratio: 10/1;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  color: rgb(3, 49, 148);
+  font-size: clamp(35px, 85%, 60px);
+  font-weight: bolder;
 }
+
+.keys:hover, .keys2:hover {
+  background-color: aqua;
+  cursor: pointer;
+}
+
+
