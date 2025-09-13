@@ -45,10 +45,3 @@
   font-size: clamp(35px, 85%, 60px);
   font-weight: bolder;
 }
-
-.keys:hover, .keys2:hover {
-  background-color: aqua;
-  cursor: pointer;
-}
-
-

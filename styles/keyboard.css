@@ -41,7 +41,13 @@
 
 .keys {
   border: 1px black solid;
-  background-color: lightgray;
+
+  
+  /*background-color: lightgray;*/
+  background-color: rgb(2, 2, 59);
+  color:rgb(169, 170, 170);
+
+
   aspect-ratio: 1/1.5;
   flex: 1;
   display: flex;
@@ -53,7 +59,12 @@
 
 .keys2 {
   border: 1px black solid;
-  background-color: lightgray;
+
+
+  /*background-color: lightgray;*/
+  background-color: rgb(2, 2, 59);
+  color:rgb(169, 170, 170);
+
   border-radius: 5px;
   flex: 1.6;
   aspect-ratio: 1/0.95;
@@ -64,6 +75,6 @@
 }
 
 .keys:hover, .keys2:hover {
-  background-color: aqua;
+  background-color: rgb(5, 5, 83);
   cursor: pointer;
 }
