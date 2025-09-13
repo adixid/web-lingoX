@@ -41,12 +41,15 @@
 
 .keys {
   border: 1px black solid;
+  
 
   
   /*background-color: lightgray;*/
   background-color: rgb(2, 2, 59);
   color:rgb(169, 170, 170);
-
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 
   aspect-ratio: 1/1.5;
   flex: 1;
@@ -60,7 +63,9 @@
 .keys2 {
   border: 1px black solid;
 
-
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
   /*background-color: lightgray;*/
   background-color: rgb(2, 2, 59);
   color:rgb(169, 170, 170);
