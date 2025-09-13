@@ -1,4 +1,4 @@
-.game-result, .newgame {
+#game-result, #newgame {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,9 +11,13 @@
   margin-bottom: 4px;
 }
 
-.newgame {
+#newgame {
   background-color: orange;
   color: black;
+}
+
+#newgame:hover {
+  cursor: pointer;
 }
 
 .play {

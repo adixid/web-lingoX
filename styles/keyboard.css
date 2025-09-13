@@ -62,3 +62,8 @@
   align-items: center;
   font-size: 1.2rem;
 }
+
+.keys:hover, .keys2:hover {
+  background-color: aqua;
+  cursor: pointer;
+}
