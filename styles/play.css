@@ -42,6 +42,6 @@
   justify-content: center;
   align-items: center;
   color: rgb(3, 49, 148);
-  font-size: clamp(25px, 85%, 60px);
+  font-size: clamp(25px, 85%, 45px);
   font-weight: bolder;
 }
