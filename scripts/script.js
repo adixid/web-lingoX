@@ -69,6 +69,7 @@ function confirm(value) {
   if (value === "DEL") { // correct already entered letters
     if (counter === 4) {
       document.getElementById(myIds[myAttempts][counter-1]).style.borderColor = borderMarkerColour;
+      myWord.pop();
       resetEnter();
     }
     
