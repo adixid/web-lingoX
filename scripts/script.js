@@ -42,7 +42,7 @@ function findWord() { // computer finds his secret word
   const countWords = words.length;
   let randomNumber = Math.floor(Math.random() * countWords);
   computerWord = words[randomNumber].toUpperCase();
-  //console.log(computerWord);
+  console.log(computerWord);
 }
 
 function showFirstLetter() {
@@ -67,6 +67,7 @@ function confirm(value) {
   }
 
   if (value === "DEL") { // correct already entered letters
+
     if (counter === 4) {
       document.getElementById(myIds[myAttempts][counter-1]).style.borderColor = borderMarkerColour;
       myWord.pop();
@@ -77,16 +78,19 @@ function confirm(value) {
       counter -= 1;
       
       if (myWord[counter] === computerWord[counter]) {
-        document.getElementById(myIds[myAttempts][counter+1]).style.borderColor = "gray";
+        if (counter < 4) {
+          document.getElementById(myIds[myAttempts][counter+1]).style.borderColor = "gray";
+        }
         document.getElementById(myIds[myAttempts][counter]).innerHTML = computerWord[counter];
         document.getElementById(myIds[myAttempts][counter]).style.color = "darkgray";
         document.getElementById(myIds[myAttempts][counter]).style.borderColor = borderMarkerColour;
         myWord.pop();
-        
       } 
       else {
         document.getElementById(myIds[myAttempts][counter]).textContent = "";
-        document.getElementById(myIds[myAttempts][counter+1]).style.borderColor = "gray";
+        if (counter < 3) {
+          document.getElementById(myIds[myAttempts][counter+1]).style.borderColor = "gray";
+        }
         document.getElementById(myIds[myAttempts][counter]).style.borderColor = borderMarkerColour;
         myWord.pop();
         
@@ -94,6 +98,8 @@ function confirm(value) {
     }
   }
 }
+
+
 
 
 function enterLetter(value) {
