@@ -69,6 +69,7 @@ function confirm(value) {
   if (value === "DEL") { // correct already entered letters
     if (counter === 4) {
       document.getElementById(myIds[myAttempts][counter-1]).style.borderColor = borderMarkerColour;
+      resetEnter();
     }
     
     if (counter > 0) {
@@ -105,8 +106,8 @@ function enterLetter(value) {
   }
 
   if (counter === 3) {
-    document.getElementById('enter').style.backgroundColor = "orange";
-    document.getElementById('enter').style.color = "black";
+    document.getElementById('enter').style.backgroundColor = "rgba(7, 7, 116, 1)";
+    document.getElementById('enter').style.color = "white";
   }
 
   myWord.push(value);  // add letter to myword  
@@ -148,7 +149,7 @@ function roundEvaluate() {
   myAttempts += 1;
   counter = 0;
   document.getElementById(myIds[myAttempts][counter]).style.borderColor = borderMarkerColour; // mark next round border for first letter
-  document.getElementById('enter').style.backgroundColor = 'lightgray';
+  resetEnter();
 }
 
 function resultInfo() {
@@ -165,8 +166,13 @@ function resultInfo() {
       document.getElementById('game-result').innerHTML = `You lose. My word was ${computerWord}.`;
   }
 
-  document.getElementById('enter').style.backgroundColor = 'lightgray';
   gameOver = true;
+  resetEnter();
+}
+
+function resetEnter() {
+  document.getElementById('enter').style.backgroundColor = "rgb(2, 2, 59)";
+  document.getElementById('enter').style.color = "rgb(169, 170, 170)";
 }
 
 newGame();
