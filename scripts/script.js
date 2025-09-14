@@ -71,7 +71,6 @@ function confirm(value) {
     if (counter > 0) {
       myWord.pop();
       counter -= 1;
-      console.log(myWord);
 
       if (myWord[counter] === computerWord[counter]) {
         if (counter < 4) {
@@ -88,12 +87,9 @@ function confirm(value) {
           document.getElementById(myIds[myAttempts][counter+1]).style.borderColor = "gray";
         }
         document.getElementById(myIds[myAttempts][counter]).style.borderColor = borderMarkerColour;
-       
-        
       }
     }
   }
-  
 }
 
 function enterLetter(value) {
@@ -125,8 +121,6 @@ function enterLetter(value) {
     counter += 1;
     }
   }
-
-  
 }
 
 function roundEvaluate() {
