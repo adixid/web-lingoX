@@ -40,10 +40,9 @@ function newGame() {
 
 function findWord() { // computer finds his secret word
   const countWords = words.length;
-  //let randomNumber = Math.floor(Math.random() * countWords);
-  //computerWord = words[randomNumber].toUpperCase();
-  computerWord = 'TIER';
-  console.log(computerWord);
+  let randomNumber = Math.floor(Math.random() * countWords);
+  computerWord = words[randomNumber].toUpperCase();
+  //console.log(computerWord);
 }
 
 function showFirstLetter() {
