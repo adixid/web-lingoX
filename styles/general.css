@@ -11,6 +11,9 @@ body {
   align-items: center;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   overflow: hidden; /* prevent scrolling */
+  -webkit-touch-callout: none;  /* disables callout on long press */
+  -webkit-user-select: none;    /* disables text selection */
+  user-select: none;
 }
 
 .main {
