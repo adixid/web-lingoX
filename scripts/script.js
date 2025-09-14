@@ -40,8 +40,9 @@ function newGame() {
 
 function findWord() { // computer finds his secret word
   const countWords = words.length;
-  let randomNumber = Math.floor(Math.random() * countWords);
-  computerWord = words[randomNumber].toUpperCase();
+  //let randomNumber = Math.floor(Math.random() * countWords);
+  //computerWord = words[randomNumber].toUpperCase();
+  computerWord = 'TIER';
   console.log(computerWord);
 }
 
@@ -68,15 +69,11 @@ function confirm(value) {
 
   if (value === "DEL") { // correct already entered letters
 
-    if (counter === 4) {
-      document.getElementById(myIds[myAttempts][counter-1]).style.borderColor = borderMarkerColour;
-      myWord.pop();
-      resetEnter();
-    }
-    
     if (counter > 0) {
+      myWord.pop();
       counter -= 1;
-      
+      console.log(myWord);
+
       if (myWord[counter] === computerWord[counter]) {
         if (counter < 4) {
           document.getElementById(myIds[myAttempts][counter+1]).style.borderColor = "gray";
@@ -84,7 +81,7 @@ function confirm(value) {
         document.getElementById(myIds[myAttempts][counter]).innerHTML = computerWord[counter];
         document.getElementById(myIds[myAttempts][counter]).style.color = "darkgray";
         document.getElementById(myIds[myAttempts][counter]).style.borderColor = borderMarkerColour;
-        myWord.pop();
+        
       } 
       else {
         document.getElementById(myIds[myAttempts][counter]).textContent = "";
@@ -92,25 +89,26 @@ function confirm(value) {
           document.getElementById(myIds[myAttempts][counter+1]).style.borderColor = "gray";
         }
         document.getElementById(myIds[myAttempts][counter]).style.borderColor = borderMarkerColour;
-        myWord.pop();
+       
         
       }
     }
   }
+  
 }
-
 
 function enterLetter(value) {
 
-  if (counter < 4) {
+  if (gameOver === false) {
+    console.log(counter);
+    if (counter < 4) {
     document.getElementById(myIds[myAttempts][counter]).innerHTML = value;  // add letter
     document.getElementById(myIds[myAttempts][counter]).style.color = "white"; // change font colour
-    document.getElementById(myIds[myAttempts][counter]).style.borderColor = "gray";
+    document.getElementById(myIds[myAttempts][counter]).style.borderColor = "gray"; // border colour back to gray
   }
   
-  
   if (counter < 3) {
-      document.getElementById(myIds[myAttempts][counter+1]).style.borderColor = borderMarkerColour;
+      document.getElementById(myIds[myAttempts][counter+1]).style.borderColor = borderMarkerColour; // move border marker to the next letter
   }
 
   if (counter === 3) {
@@ -118,12 +116,18 @@ function enterLetter(value) {
     document.getElementById('enter').style.color = "white";
   }
 
-  myWord.push(value);  // add letter to myword  
+  if (counter < 4) {
+    myWord.push(value);  // add letter to myword  
+  }
+  
   if (counter === 4) {
-    return 
+    return;
   } else {
     counter += 1;
+    }
   }
+
+  
 }
 
 function roundEvaluate() {
@@ -137,28 +141,31 @@ function roundEvaluate() {
     }
   
   // correct position
-  for (let i = 0; i < 4; i++) {
-    if (myWord[i] === computerWord[i]) {  // mark correct letter in correct positition
-      document.getElementById(myIds[myAttempts][i]).style.backgroundColor = correctPosition;
+  if (gameOver === false) {
+    for (let i = 0; i < 4; i++) {
+      if (myWord[i] === computerWord[i]) {  // mark correct letter in correct positition
+        document.getElementById(myIds[myAttempts][i]).style.backgroundColor = correctPosition;
 
-      if (myAttempts < 4) {
-        document.getElementById(myIds[myAttempts+1][i]).style.backgroundColor = correctPosition;
-        document.getElementById(myIds[myAttempts+1][i]).innerHTML = computerWord[i];
-        document.getElementById(myIds[myAttempts+1][i]).style.color = "darkgray";
+        if (myAttempts < 4) {
+          document.getElementById(myIds[myAttempts+1][i]).style.backgroundColor = correctPosition;
+          document.getElementById(myIds[myAttempts+1][i]).innerHTML = computerWord[i];
+          document.getElementById(myIds[myAttempts+1][i]).style.color = "darkgray";
+        }
+      }
+    }
+
+    //wrong position
+    for (let i = 0; i < 4; i++) {
+      for (let j = 0; j < 4; j++) {
+        if (myWord[i] === computerWord[j]) {
+          if (i != j) {
+            document.getElementById(myIds[myAttempts][i]).style.backgroundColor = wrongPosition;
+          } 
+        }
       }
     }
   }
-
-  //wrong position
-  for (let i = 0; i < 4; i++) {
-    for (let j = 0; j < 4; j++) {
-      if (myWord[i] === computerWord[j]) {
-        if (i != j) {
-          document.getElementById(myIds[myAttempts][i]).style.backgroundColor = wrongPosition;
-        } 
-      }
-    }
-  }
+  
 
   // reveal correct word
   if (myAttempts === 4) { 
@@ -169,7 +176,7 @@ function roundEvaluate() {
   myWord = [];
   myAttempts += 1;
   counter = 0;
-  if (myAttempts < 4) {
+  if ((myAttempts < 4) && (gameOver === false)) {
     document.getElementById(myIds[myAttempts][counter]).style.borderColor = borderMarkerColour; // mark next round border for first letter
   }
   
@@ -184,7 +191,7 @@ function resultInfo() {
   if (myWord.join("") === computerWord) { 
     document.getElementById("game-result").style.backgroundColor = 'green';
     document.getElementById("game-result").style.color = 'white';
-    document.getElementById('game-result').innerHTML = 'Well played, you found the correct word!';
+    document.getElementById('game-result').innerHTML = 'Well played, you have found the correct word !';
   } else {
       document.getElementById("game-result").style.backgroundColor = 'red';
       document.getElementById("game-result").style.color = 'white';
